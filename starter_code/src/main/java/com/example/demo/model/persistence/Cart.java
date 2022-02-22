@@ -1,10 +1,6 @@
 package com.example.demo.model.persistence;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,11 +8,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "cart")
@@ -93,5 +90,28 @@ public class Cart {
 			total = new BigDecimal(0);
 		}
 		total = total.subtract(item.getPrice());
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Cart cart = (Cart) o;
+		return Objects.equals(id, cart.id) && Objects.equals(items, cart.items) && Objects.equals(user, cart.user) && Objects.equals(total, cart.total);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, items, user, total);
+	}
+
+	@Override
+	public String toString() {
+		return "Cart{" +
+			"id=" + id +
+			", items=" + items +
+			", user=" + user +
+			", total=" + total +
+			'}';
 	}
 }
