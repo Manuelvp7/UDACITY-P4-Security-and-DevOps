@@ -5,6 +5,8 @@ import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.repositories.CartRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
 import com.example.demo.model.requests.CreateUserRequest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("/api/user")
@@ -23,6 +26,8 @@ public class UserController {
 	private final CartRepository cartRepository;
 	private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+	private static final Logger log = LogManager.getLogger(UserController.class);
+
 	public UserController(UserRepository userRepository, CartRepository cartRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
 		this.userRepository = userRepository;
 		this.cartRepository = cartRepository;
@@ -32,6 +37,9 @@ public class UserController {
 
 	@GetMapping("/id/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id) {
+
+		log.info("Getting user by id");
+
 		return ResponseEntity.of(userRepository.findById(id));
 	}
 	
@@ -43,6 +51,8 @@ public class UserController {
 	
 	@PostMapping("/create")
 	public ResponseEntity<User> createUser(@RequestBody CreateUserRequest createUserRequest) {
+		log.info("Create user Request received");
+		System.out.println("Create user Request received");
 		User user = new User();
 		user.setUsername(createUserRequest.getUsername());
 		Cart cart = new Cart();
@@ -50,10 +60,13 @@ public class UserController {
 		user.setCart(cart);
 		if (createUserRequest.getPassword().length() < 7 ||
 			!createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword())){
+			System.out.println("Create user Request failoure due to pass lenght not valid");
+			log.error("Create user Request failoure due to pass lenght not valid");
 			return ResponseEntity.badRequest().build();
 		}
 		user.setPassword(bCryptPasswordEncoder.encode(createUserRequest.getPassword()));
 		userRepository.save(user);
+		log.info("Create user Request success");
 		return ResponseEntity.ok(user);
 	}
 	

@@ -1,0 +1,36 @@
+2022-02-27 18:33:39,727 INFO o.s.b.StartupInfoLogger [main] Starting SareetaApplication on manuel-HP-Pavilion-Notebook with PID 251550 (/home/manuel/Documents/Spring/Udacity/UDACITY-P4-Security-and-DevOps/starter_code/target/classes started by manuel in /home/manuel/Documents/Spring/Udacity/UDACITY-P4-Security-and-DevOps/starter_code)
+2022-02-27 18:33:39,740 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-02-27 18:33:40,533 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-02-27 18:33:40,722 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 176ms. Found 4 repository interfaces.
+2022-02-27 18:33:41,311 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9030c3bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-27 18:33:41,693 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2022-02-27 18:33:41,743 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2022-02-27 18:33:41,776 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2022-02-27 18:33:41,777 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2022-02-27 18:34:50,706 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-02-27 18:34:50,736 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 70919 ms
+2022-02-27 18:35:41,200 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-02-27 18:35:46,855 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-02-27 18:35:51,303 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-02-27 18:35:56,474 INFO o.h.Version [main] HHH000412: Hibernate Core {5.3.10.Final}
+2022-02-27 18:35:56,658 INFO o.h.c.Environment [main] HHH000206: hibernate.properties not found
+2022-02-27 18:36:25,774 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2022-02-27 18:36:53,970 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-02-27 18:37:22,815 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-27 18:38:16,202 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-27 18:38:17,817 INFO o.s.s.w.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61555218, org.springframework.security.web.context.SecurityContextPersistenceFilter@448fa659, org.springframework.security.web.header.HeaderWriterFilter@656c0eae, org.springframework.web.filter.CorsFilter@1fcf73b9, org.springframework.security.web.authentication.logout.LogoutFilter@5d035ab6, com.example.demo.security.JWTAuthenticationFilter@3b80bb63, com.example.demo.security.JWTAuthenticationVerficationFilter@17ebbf1e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c6fc278, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27f31d91, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c65fa69, org.springframework.security.web.session.SessionManagementFilter@29c21acb, org.springframework.security.web.access.ExceptionTranslationFilter@237ee2e1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@475eb4fd]
+2022-02-27 18:38:25,016 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-02-27 18:38:48,469 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2022-02-27 18:38:48,634 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2022-02-27 18:38:48,641 INFO o.s.b.StartupInfoLogger [main] Started SareetaApplication in 309.339 seconds (JVM running for 310.623)
+2022-02-27 18:39:09,105 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-27 18:39:09,106 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-02-27 18:39:09,113 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 7 ms
+2022-02-27 18:39:09,245 INFO c.e.d.c.UserController [http-nio-8081-exec-2] Create user Request received
+2022-02-27 18:39:09,425 INFO c.e.d.c.UserController [http-nio-8081-exec-2] Create user Request success
+2022-02-27 18:39:25,317 INFO o.s.s.c.ExecutorConfigurationSupport [Thread-3] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-27 18:39:25,320 INFO o.s.o.j.AbstractEntityManagerFactoryBean [Thread-3] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-27 18:39:25,324 INFO c.z.h.HikariDataSource [Thread-3] HikariPool-1 - Shutdown initiated...
+2022-02-27 18:39:25,327 INFO c.z.h.HikariDataSource [Thread-3] HikariPool-1 - Shutdown completed.
